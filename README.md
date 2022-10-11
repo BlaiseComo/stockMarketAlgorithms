@@ -1,0 +1,1 @@
+# Repository of any and all projects related to stock market prediction
