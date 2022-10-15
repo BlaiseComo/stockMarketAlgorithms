@@ -1,11 +1,13 @@
 # Using twint library to scrape data
 import twint
 
+# Putting the main functionality for the scraper in a class allows for better organization
 class twitterScraper:
 
     def __init__(self):
         pass
 
+    # This function creates a twint object based on the given paremeters
     def gatherDataAbout(self, searchTerm, dataLimit, startDate, endDate, fileName):
         
         twintObject = twint.Config()
@@ -24,6 +26,7 @@ class twitterScraper:
 
         return twintObject
 
+    # Uses gatherDataAbout function and user inputs to return a twint object
     def userInterface(self):
 
         searchTerm = input("Enter search term:\n")
@@ -48,6 +51,7 @@ if (userInterface == str(1)):
 
     twintObject = twitterScraper().userInterface()
 
+    # Twint searches based off the returned object, but only if the user chooses to do so
     twint.run.Search(twintObject)
 
     print("Thankyou for using the twitter scraper!")
@@ -56,10 +60,10 @@ if (userInterface == str(1)):
 
 
 
+# Test Code
+#twintObject = twitterScraper()
 
-twintObject = twitterScraper()
+#newObject = twintObject.gatherDataAbout('Tesla', 20, '2020-02-15', '2021-01-15', './twitterData/test3.csv')
 
-newObject = twintObject.gatherDataAbout('Tesla', 20, '2020-02-15', '2021-01-15', './twitterData/test3.csv')
-
-twint.run.Search(newObject)
+#twint.run.Search(newObject)
 
